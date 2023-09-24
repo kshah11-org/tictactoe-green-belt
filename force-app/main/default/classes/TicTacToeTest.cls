@@ -161,4 +161,37 @@ public with sharing class TicTacToeTest {
     );
 
   }
+
+  @IsTest
+  static void turnTaking_playerO_winning_vertical() {
+    String expectedBoard = String.join(
+      new List<String>{ 'X|O| ', '-+-+-', 'X|O|X', '-+-+-', ' |O| ', '\n' },
+      '\n'
+    );
+    String expectedMessage = 'Player X won the game!';
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 5, 6 };
+
+    Test.startTest();
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    Test.stopTest();
+
+    String gameLog = ticTacToe.getGameLog();
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedBoard),
+      'gameLog should include a board with all Os in the middle column'
+    );
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedMessage),
+      'gameLog should include player O won'
+    );
+
+  }
 }
