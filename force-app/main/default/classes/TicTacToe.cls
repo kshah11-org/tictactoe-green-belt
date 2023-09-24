@@ -149,5 +149,8 @@ public with sharing class TicTacToe {
     this.play('X');
     this.play('O');
     this.play('X');
+    if (String.isBlank(this.gameWinner)) {
+      this.play('O');
+    }
   }
 }
