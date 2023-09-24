@@ -142,4 +142,12 @@ public with sharing class TicTacToe {
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
   }
+
+  public void playGame() {
+    this.play('X');
+    this.play('O');
+    this.play('X');
+    this.play('O');
+    this.play('X');
+  }
 }
