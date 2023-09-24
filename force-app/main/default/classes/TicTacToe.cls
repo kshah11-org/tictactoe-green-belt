@@ -7,6 +7,7 @@ public with sharing class TicTacToe {
   private String currentPlayer;
   private String gameWinner;
 
+  private Boolean gameOver = false;
   private String PLAYER_X = 'X';
   private String PLAYER_O = 'O';
 
@@ -102,55 +103,57 @@ public with sharing class TicTacToe {
     this.checkDiagonal();
   }
 
+  private void setWinner() {
+    this.gameOver = true;
+    this.gameWinner = this.currentPlayer;
+    this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+  }
   public void checkHorizontal() {
     if (this.board[0].equals(this.currentPlayer) && this.board[1].equals(this.currentPlayer) && this.board[2].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
     if (this.board[3].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
     if (this.board[6].equals(this.currentPlayer) && this.board[7].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
   }
 
   public void checkVertical() {
     if (this.board[0].equals(this.currentPlayer) && this.board[3].equals(this.currentPlayer) && this.board[6].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
     if (this.board[1].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[7].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
     if (this.board[2].equals(this.currentPlayer) && this.board[5].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
   }
 
   public void checkDiagonal() {
     if (this.board[2].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[6].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
     if (this.board[0].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
-      this.gameWinner = this.currentPlayer;
-      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+      this.setWinner();
     }
   }
 
   public void playGame() {
-    this.play('X');
-    this.play('O');
-    this.play('X');
-    this.play('O');
-    this.play('X');
-    if (String.isBlank(this.gameWinner)) {
-      this.play('O');
+    String player = this.PLAYER_X;
+    while (!this.gameOver) {
+      this.play(player);
+      player = changePlayer(player);
     }
+  }
+
+  public String changePlayer(String player) {
+    if (player == this.PLAYER_X) {
+      return this.PLAYER_O;
+    } else {
+      return this.PLAYER_X;
+    } 
   }
 }
