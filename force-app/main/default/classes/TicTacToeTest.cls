@@ -168,9 +168,9 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X|O| ', '-+-+-', 'X|O|X', '-+-+-', ' |O| ', '\n' },
       '\n'
     );
-    String expectedMessage = 'Player X won the game!';
+    String expectedMessage = 'Player O won the game!';
     TicTacToe ticTacToe = new TicTacToe();
-    ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 5, 6 };
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 5, 7 };
 
     Test.startTest();
     ticTacToe.play('X');

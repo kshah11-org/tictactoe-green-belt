@@ -32,3 +32,10 @@ TODO:
 - Write code for player O vertical win
 - Write test for diagonal (top left to bottom right) win
 - Write code for diagonal (top left to bottom right) win
+
+# Pomodoro 4
+✅ Update test for player O vertical win
+- Write code for player O vertical win
+- Refactor
+- Write test for diagonal (top left to bottom right) win
+- Write code for diagonal (top left to bottom right) win
