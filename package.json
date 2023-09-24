@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Salesforce App",
   "scripts": {
+    "cli": "chokidar \"force-app/main/default/classes/**/*.cls\" -c \"cli/cli.sh\"",
     "lint": "eslint **/{aura,lwc}/**",
     "test": "npm run test:unit",
     "test:unit": "sfdx-lwc-jest",
@@ -39,6 +40,7 @@
     ]
   },
   "dependencies": {
+    "chokidar-cli": "^3.0.0",
     "snyk": "^1.1226.0"
   }
 }
