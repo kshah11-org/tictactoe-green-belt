@@ -1,7 +1,5 @@
 @IsTest
 public with sharing class TicTacToeTest {
-  private String PLAYER_X = 'X';
-  private String PLAYER_O = 'O';
 
   @IsTest
   static void gameBoardCreationPhase_shouldPrintTitleStatusMessageEmptyBoard() {
@@ -44,7 +42,7 @@ public with sharing class TicTacToeTest {
     ticTacToe.mockedMoves = new List<Integer>{ 0 };
 
     Test.startTest();
-    ticTacToe.play();
+    ticTacToe.play('X');
     Test.stopTest();
 
     String gameLog = ticTacToe.getGameLog();
@@ -65,8 +63,8 @@ public with sharing class TicTacToeTest {
     ticTacToe.mockedMoves = new List<Integer>{ 0, 1 };
 
     Test.startTest();
-    ticTacToe.play(PLAYER_X);
-    ticTacToe.play(PLAYER_O);
+    ticTacToe.play('X');
+    ticTacToe.play('O');
     Test.stopTest();
 
     String gameLog = ticTacToe.getGameLog();

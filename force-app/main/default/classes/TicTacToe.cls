@@ -18,7 +18,8 @@ public with sharing class TicTacToe {
     this.logRound();
   }
 
-  public void play() {
+  public void play(String player) {
+    this.currentPlayer = player;
     this.takeTurn();
     this.logRound();
   }
