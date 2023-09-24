@@ -105,5 +105,9 @@ public with sharing class TicTacToe {
       this.gameWinner = this.PLAYER_X;
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
+    if (this.board[1].equals(this.PLAYER_O) && this.board[4].equals(this.PLAYER_O) && this.board[7].equals(this.PLAYER_O)) {
+      this.gameWinner = this.PLAYER_O;
+      this.statusMessage = 'Player ' + this.PLAYER_O + ' won the game!';
+    }
   }
 }
