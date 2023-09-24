@@ -101,12 +101,12 @@ public with sharing class TicTacToeTest {
   @IsTest
   static void turnTaking_playerX_winning() {
     String expectedBoard = String.join(
-      new List<String>{ 'X|O| ', '-+-+-', 'X|O| ', '-+-+-', 'X| | ', '\n' },
+      new List<String>{ 'X|X|X', '-+-+-', 'O|O| ', '-+-+-', ' | | ', '\n' },
       '\n'
     );
     String expectedMessage = 'Player X won the game';
     TicTacToe ticTacToe = new TicTacToe();
-    ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 6 };
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 3, 1, 4, 2 };
 
     Test.startTest();
     ticTacToe.play('X');
@@ -120,7 +120,7 @@ public with sharing class TicTacToeTest {
     System.assertEquals(
       true,
       gameLog.contains(expectedBoard),
-      'gameLog should include a board with an X in the middle left cell'
+      'gameLog should include a board with all Xs in the top row'
     );
     System.assertEquals(
       true,
