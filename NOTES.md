@@ -39,5 +39,5 @@ TODO:
 ✅ Refactor
 ✅ Write test for diagonal (top right to bottom left) win
 ✅ Write code for diagonal (top right to bottom left) win
-- Write test for diagonal (top left to bottom right) win
-- Write code for diagonal (top left to bottom right) win
+✅ Write test for diagonal (top left to bottom right) win
+✅ Write code for diagonal (top left to bottom right) win
