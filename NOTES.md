@@ -27,6 +27,6 @@ TODO:
 ✅ Update test for player X wins
 ✅ Write code for player X wins
 ✅ Write test for player x vertical win
-- Write code for player x vertical win
+✅ Write code for player x vertical win
 - Write test for diagonal (top left to bottom right) win
 - Write code for diagonal (top left to bottom right) win
