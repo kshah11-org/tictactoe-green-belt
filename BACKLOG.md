@@ -8,12 +8,12 @@ As a Player
 I want to play TicTacToe
 So that i can win the game
 
-# UAT 1.1
+# UAT 1.1✅
 GIVEN a TicTacToe board
 WHEN the player X has taken a turn
 THEN the player O wants to take a turn
 
-# UAT 1.2
+# UAT 1.2✅
 GIVEN a TicTacToe board
 WHEN the player O has taken a turn
 THEN the player X wants to take a 2nd turn

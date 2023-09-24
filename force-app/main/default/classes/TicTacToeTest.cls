@@ -74,4 +74,27 @@ public with sharing class TicTacToeTest {
       'gameLog should include a board with an O in the top centre cell'
     );
   }
+
+  @IsTest
+  static void turnTaking_playerX_middleLeft() {
+    String expectedBoard = String.join(
+      new List<String>{ 'X|O| ', '-+-+-', 'X| | ', '-+-+-', ' | | ', '\n' },
+      '\n'
+    );
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3 };
+
+    Test.startTest();
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    ticTacToe.play('X');
+    Test.stopTest();
+
+    String gameLog = ticTacToe.getGameLog();
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedBoard),
+      'gameLog should include a board with an X in the middle left cell'
+    );
+  }
 }
