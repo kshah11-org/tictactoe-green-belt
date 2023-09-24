@@ -49,4 +49,5 @@ TODO:
 
 # Pomodoro 5
 ✅ Refactor
-- create new class for api
+❌ create new class for api
+🚧 create js e2e tests for new game

@@ -1,3 +1,4 @@
+@RestResource(urlMapping='/TicTacToe/newGame')
 public with sharing class TicTacToe {
   private String title;
   private String statusMessage;
