@@ -1,4 +1,4 @@
-@RestResource(urlMapping='/TicTacToe/newGame')
+@RestResource(urlMapping='/api/TicTacToe/newGame')
 public with sharing class TicTacToe {
   private String title;
   private String statusMessage;
@@ -157,4 +157,13 @@ public with sharing class TicTacToe {
       return this.PLAYER_X;
     } 
   }
+
+  @HttpGet
+  global static string playBOTGame(){
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 3, 6, 5, 4 };
+    ticTacToe.playGame();
+    return ticTacToe.getGameLog();
+  }
+
 }

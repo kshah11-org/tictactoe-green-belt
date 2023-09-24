@@ -51,3 +51,6 @@ TODO:
 ✅ Refactor
 ❌ create new class for api
 🚧 create js e2e tests for new game
+
+# Pomodoro 6
+✅ create js e2e tests for new game
