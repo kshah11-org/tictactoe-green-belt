@@ -48,4 +48,5 @@ TODO:
 - refactor
 
 # Pomodoro 5
-- Refactor
+✅ Refactor
+- create new class for api
