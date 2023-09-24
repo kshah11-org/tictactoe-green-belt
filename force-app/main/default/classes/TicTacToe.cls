@@ -97,17 +97,37 @@ public with sharing class TicTacToe {
   }
 
   public void checkWinner() {
-    if (this.board[0].equals(this.PLAYER_X) && this.board[1].equals(this.PLAYER_X) && this.board[2].equals(this.PLAYER_X)) {
-      this.gameWinner = this.PLAYER_X;
+    this.checkHorizontal();
+    this.checkVertical();
+  }
+
+  public void checkHorizontal() {
+    if (this.board[0].equals(this.currentPlayer) && this.board[1].equals(this.currentPlayer) && this.board[2].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
-    if (this.board[0].equals(this.PLAYER_X) && this.board[3].equals(this.PLAYER_X) && this.board[6].equals(this.PLAYER_X)) {
-      this.gameWinner = this.PLAYER_X;
+    if (this.board[3].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
-    if (this.board[1].equals(this.PLAYER_O) && this.board[4].equals(this.PLAYER_O) && this.board[7].equals(this.PLAYER_O)) {
-      this.gameWinner = this.PLAYER_O;
-      this.statusMessage = 'Player ' + this.PLAYER_O + ' won the game!';
+    if (this.board[6].equals(this.currentPlayer) && this.board[7].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+    }
+  }
+
+  public void checkVertical() {
+    if (this.board[0].equals(this.currentPlayer) && this.board[3].equals(this.currentPlayer) && this.board[6].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+    }
+    if (this.board[1].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[7].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+    }
+    if (this.board[2].equals(this.currentPlayer) && this.board[5].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
   }
 }
