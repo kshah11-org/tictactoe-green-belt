@@ -225,4 +225,34 @@ public with sharing class TicTacToeTest {
       'gameLog should include player O won'
     );
   }
+  @IsTest
+  static void turnTaking_playerX_winning_diagonal() {
+    String expectedBoard = String.join(
+      new List<String>{ 'X| |O', '-+-+-', ' |X|O', '-+-+-', ' | |X', '\n' },
+      '\n'
+    );
+    String expectedMessage = 'Player X won the game!';
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 4, 5, 8 };
+
+    Test.startTest();
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    ticTacToe.play('X');
+    ticTacToe.play('O');
+    ticTacToe.play('X');
+    Test.stopTest();
+
+    String gameLog = ticTacToe.getGameLog();
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedBoard),
+      'gameLog should include a board with all Xs diagonally left to right'
+    );
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedMessage),
+      'gameLog should include player X won'
+    );
+  }
 }
