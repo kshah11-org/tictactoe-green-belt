@@ -217,7 +217,7 @@ public with sharing class TicTacToeTest {
     System.assertEquals(
       true,
       gameLog.contains(expectedBoard),
-      'gameLog should include a board with all Os diagonally left to right'
+      'gameLog should include a board with all Os diagonally right to left'
     );
     System.assertEquals(
       true,

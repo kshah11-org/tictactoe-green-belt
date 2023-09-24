@@ -99,6 +99,7 @@ public with sharing class TicTacToe {
   public void checkWinner() {
     this.checkHorizontal();
     this.checkVertical();
+    this.checkDiagonal();
   }
 
   public void checkHorizontal() {
@@ -126,6 +127,13 @@ public with sharing class TicTacToe {
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
     if (this.board[2].equals(this.currentPlayer) && this.board[5].equals(this.currentPlayer) && this.board[8].equals(this.currentPlayer)) {
+      this.gameWinner = this.currentPlayer;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+    }
+  }
+
+  public void checkDiagonal() {
+    if (this.board[2].equals(this.currentPlayer) && this.board[4].equals(this.currentPlayer) && this.board[6].equals(this.currentPlayer)) {
       this.gameWinner = this.currentPlayer;
       this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
     }
