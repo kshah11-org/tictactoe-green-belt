@@ -33,6 +33,10 @@ GIVEN a TicTacToe board
 WHEN the player O has taken 2 turn
 THEN the player X wants to take a 3rd turn
 
+# UAT 1.5 
+GIVEN a TicTacToe board
+WHEN the player makes a winning move
+THEN the player wins the game
 # User story 2
 As a Player 
 I want to play TicTacToe
