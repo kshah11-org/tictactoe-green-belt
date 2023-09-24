@@ -20,12 +20,12 @@ TODO:
 ❌ Write test for the 4th turn (UAT 1.3)
 ❌ Write code for the 4th turn (UAT 1.3)
 ✅ Write more UATs
-✅ Write test for player X winning
-- Write code for player X winning
+✅ Write test for player X wins
+- Write code for player X wins
 
 # Pomodoro 3
-✅ Update test for player X winning
-- Write code for player X winning
+✅ Update test for player X wins
+✅ Write code for player X wins
 - Write test for vertical win
 - Write code for vertical win
 - Write test for diagonal (top left to bottom right) win

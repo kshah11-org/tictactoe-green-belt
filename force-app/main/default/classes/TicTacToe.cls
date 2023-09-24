@@ -21,6 +21,7 @@ public with sharing class TicTacToe {
   public void play(String player) {
     this.currentPlayer = player;
     this.takeTurn();
+    this.checkWinner();
     this.logRound();
   }
 
@@ -93,5 +94,12 @@ public with sharing class TicTacToe {
 
   public String getGameLog() {
     return String.join(this.gameLog, '\n');
+  }
+
+  public void checkWinner() {
+    if (this.board[0].equals(this.PLAYER_X) && this.board[1].equals(this.PLAYER_X) && this.board[2].equals(this.PLAYER_X)) {
+      this.gameWinner = this.PLAYER_X;
+      this.statusMessage = 'Player ' + this.gameWinner + ' won the game!';
+    }
   }
 }
