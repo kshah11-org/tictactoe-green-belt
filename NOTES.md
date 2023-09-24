@@ -42,6 +42,7 @@ TODO:
 ✅ Write test for diagonal (top left to bottom right) win
 ✅ Write code for diagonal (top left to bottom right) win
 ✅ Write test to play entire game - x wins
+✅ Write code to play entire game
+✅ Write test to play entire game - o wins
 - Write code to play entire game
-- Write test to play entire game - o wins
-- Write code to play entire game
+- refactor
