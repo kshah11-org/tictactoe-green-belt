@@ -10,28 +10,28 @@ So that i can win the game
 
 # UAT 1.1
 GIVEN a TicTacToe board
-WHEN the first player has taken a turn
-THEN the second player wants to take a turn
+WHEN the player X has taken a turn
+THEN the player O wants to take a turn
 
 # UAT 1.2
 GIVEN a TicTacToe board
-WHEN the second player has taken a turn
-THEN the first player wants to take a 2nd turn
+WHEN the player O has taken a turn
+THEN the player X wants to take a 2nd turn
 
 # UAT 1.3
 GIVEN a TicTacToe board
-WHEN the first player has taken 2 turn
-THEN the second player wants to take a 2nd turn
+WHEN the player X has taken 2 turn
+THEN the player O wants to take a 2nd turn
 
 # UAT 1.4
 GIVEN a TicTacToe board
-WHEN the second player has taken 2 turn
-THEN the first player wants to take a 3rd turn
+WHEN the player O has taken 2 turn
+THEN the player X wants to take a 3rd turn
 
 # UAT 1.4
 GIVEN a TicTacToe board
-WHEN the second player has taken 2 turn
-THEN the first player wants to take a 3rd turn
+WHEN the player O has taken 2 turn
+THEN the player X wants to take a 3rd turn
 
 # User story 2
 As a Player 

@@ -1,5 +1,8 @@
 @IsTest
 public with sharing class TicTacToeTest {
+  private String PLAYER_X = 'X';
+  private String PLAYER_O = 'O';
+
   @IsTest
   static void gameBoardCreationPhase_shouldPrintTitleStatusMessageEmptyBoard() {
     String expectedTitle = 'Game Board Creation...';
@@ -49,6 +52,28 @@ public with sharing class TicTacToeTest {
       true,
       gameLog.contains(expectedBoard),
       'gameLog should include a board with an X in the top left cell'
+    );
+  }
+
+  @IsTest
+  static void turnTaking_playerO_topCentre() {
+    String expectedBoard = String.join(
+      new List<String>{ 'X|O| ', '-+-+-', ' | | ', '-+-+-', ' | | ', '\n' },
+      '\n'
+    );
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.mockedMoves = new List<Integer>{ 0, 1 };
+
+    Test.startTest();
+    ticTacToe.play(PLAYER_X);
+    ticTacToe.play(PLAYER_O);
+    Test.stopTest();
+
+    String gameLog = ticTacToe.getGameLog();
+    System.assertEquals(
+      true,
+      gameLog.contains(expectedBoard),
+      'gameLog should include a board with an O in the top centre cell'
     );
   }
 }
