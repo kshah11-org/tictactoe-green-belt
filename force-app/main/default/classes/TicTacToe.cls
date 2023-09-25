@@ -1,5 +1,5 @@
 @RestResource(urlMapping='/api/TicTacToe/newGame')
-public with sharing class TicTacToe {
+global with sharing class TicTacToe {
   private String title;
   private String statusMessage;
   private List<String> board;
