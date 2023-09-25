@@ -1,3 +1,3 @@
 TicTacToe ticTacToe = new TicTacToe();
-ticTacToe.play();
+ticTacToe.playGame();
 System.debug(JSON.serializePretty(ticTacToe.getGameLog()));
