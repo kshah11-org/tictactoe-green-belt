@@ -19,6 +19,7 @@ jobs:
           tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
           echo "$HOME/sfdx/bin" >> $GITHUB_PATH
           ~/sfdx/bin/sfdx version
+          sf config set org-instance-url=${{ vars.scratch_org_url }} --global
       - name: Run unit tests
         run: sfdx apex run test -w 5 -y -r human
       - name: Play game
