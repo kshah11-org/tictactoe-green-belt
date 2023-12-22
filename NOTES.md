@@ -69,3 +69,4 @@ TODO:
 ✅ Instal SF
 ✅ Run tests
 ✅ Update sonar cloud
+✅ Get rid of code smell
