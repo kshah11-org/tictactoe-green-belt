@@ -26,7 +26,9 @@ jobs:
           echo "SCRATCH_ORG_URL : $SCRATCH_ORG_URL"
           ~/sfdx/bin/sfdx config set org-instance-url=$SCRATCH_ORG_URL --global
       - name: Run unit tests
-        run: ~/sfdx/bin/sfdx apex run test -w 5 -y -r human
+        env:
+          USERNAME: ${{ vars.USERNAME }}
+        run: ~/sfdx/bin/sfdx apex run test -o $USERNAME -w 5 -y -r human
       - name: Play game
         run: ./cli/cli.sh
       # - name: Run ESLint
