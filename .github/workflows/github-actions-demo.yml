@@ -21,6 +21,7 @@ jobs:
           tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
           echo "$HOME/sfdx/bin" >> $GITHUB_PATH
           ~/sfdx/bin/sfdx version
+          echo "SCRATCH_ORG_URL : $SCRATCH_ORG_URL"
           ~/sfdx/bin/sfdx config set org-instance-url=$SCRATCH_ORG_URL --global
       - name: Run unit tests
         run: ~/sfdx/bin/sfdx apex run test -w 5 -y -r human
