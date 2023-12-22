@@ -23,7 +23,7 @@ jobs:
         env:
           SCRATCH_ORG_URL: ${{ vars.SCRATCH_ORG_URL }}
           USERNAME: ${{ vars.USERNAME }}
-          SCRATCH_ORG_TOKEN: ${{ vars.SCRATCH_ORG_TOKEN }}
+          SCRATCH_ORG_TOKEN: ${{ secrets.SCRATCH_ORG_TOKEN }}
         run: |
           echo "SCRATCH_ORG_URL : $SCRATCH_ORG_URL"
           ~/sfdx/bin/sfdx config set org-instance-url=$SCRATCH_ORG_URL --global
