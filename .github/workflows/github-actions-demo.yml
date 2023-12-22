@@ -21,7 +21,7 @@ jobs:
           ~/sfdx/bin/sfdx version
       - name: Set Org
         env:
-          SCRATCH_ORG_URL: ${{ env.SCRATCH_ORG_URL }}
+          SCRATCH_ORG_URL: ${{ vars.SCRATCH_ORG_URL }}
         run: |
           echo "SCRATCH_ORG_URL : $SCRATCH_ORG_URL"
           ~/sfdx/bin/sfdx config set org-instance-url=$SCRATCH_ORG_URL --global
