@@ -28,7 +28,7 @@ jobs:
           echo "SCRATCH_ORG_URL : $SCRATCH_ORG_URL"
           ~/sfdx/bin/sfdx config set org-instance-url=$SCRATCH_ORG_URL --global
           sf project deploy start --source-dir force-app --ignore-conflicts --target-org $SCRATCH_ORG_TOKEN
-          ~/sfdx/bin/sfdx apex run test -o $USERNAME -w 5 -y -r human
+          ~/sfdx/bin/sfdx apex run test -o $SCRATCH_ORG_TOKEN -w 5 -y -r human
       - name: Play game
         run: ./cli/cli.sh
       # - name: Run ESLint
