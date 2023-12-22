@@ -30,7 +30,9 @@ jobs:
           sf project deploy start --source-dir force-app --ignore-conflicts --target-org $SCRATCH_ORG_TOKEN
           ~/sfdx/bin/sfdx apex run test -o $SCRATCH_ORG_TOKEN -w 5 -y -r human
       - name: Play game
-        run: ./cli/cli.sh
+        env:
+          SCRATCH_ORG_TOKEN: ${{ secrets.SCRATCH_ORG_TOKEN }}
+        run: echo -e "$(sf apex run -o $SCRATCH_ORG_TOKEN -f cli/cli.apex | grep 'USER_DEBUG' | grep -Eo '".*"' | sed 's/&#124;/|/g')"
       # - name: Run ESLint
       #   run: npm run lint
       # - name: SonarCloud Scan
