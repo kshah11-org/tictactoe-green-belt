@@ -1,7 +1,5 @@
 @IsTest
 public with sharing class TicTacToeTest {
-  String XWinMessage = 'Player X won the game!';
-  String OWinMessage = 'Player O won the game!';
 
   @IsTest
   static void gameBoardCreationPhase_shouldPrintTitleStatusMessageEmptyBoard() {
@@ -106,6 +104,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X|X|X', '-+-+-', 'O|O| ', '-+-+-', ' | | ', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player X won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 3, 1, 4, 2 };
 
@@ -125,7 +124,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(XWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player X won'
     );
 
@@ -137,6 +136,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X|O| ', '-+-+-', 'X|O| ', '-+-+-', 'X| | ', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player X won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 6 };
 
@@ -156,7 +156,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(XWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player X won'
     );
 
@@ -168,6 +168,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X|O| ', '-+-+-', 'X|O|X', '-+-+-', ' |O| ', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player O won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 1, 3, 4, 5, 7 };
 
@@ -188,7 +189,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(OWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player O won'
     );
   }
@@ -199,6 +200,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X| |O', '-+-+-', 'X|O|X', '-+-+-', 'O| | ', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player O won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 3, 6, 5, 4 };
 
@@ -219,7 +221,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(OWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player O won'
     );
   }
@@ -230,6 +232,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X| |O', '-+-+-', ' |X|O', '-+-+-', ' | |X', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player X won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 4, 5, 8 };
 
@@ -249,7 +252,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(XWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player X won'
     );
   }
@@ -260,6 +263,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X| |O', '-+-+-', ' |X|O', '-+-+-', ' | |X', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player X won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 4, 5, 8 };
 
@@ -275,7 +279,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(XWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player X won'
     );
   }
@@ -286,6 +290,7 @@ public with sharing class TicTacToeTest {
       new List<String>{ 'X| |O', '-+-+-', 'X|O|X', '-+-+-', 'O| | ', '\n' },
       '\n'
     );
+    String expectedMessage = 'Player O won the game!';
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.mockedMoves = new List<Integer>{ 0, 2, 3, 6, 5, 4 };
 
@@ -301,7 +306,7 @@ public with sharing class TicTacToeTest {
     );
     System.assertEquals(
       true,
-      gameLog.contains(OWinMessage),
+      gameLog.contains(expectedMessage),
       'gameLog should include player O won'
     );
   }
